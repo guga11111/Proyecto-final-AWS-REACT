@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Axios from "axios";
+import axios from "axios";
 
 
 
@@ -67,20 +67,32 @@ export default function SignInSide() {
   const [password, setPassword] = useState("");
 
 
-  const url =  `https://localhost:5000/Api/${username}/${password}`;
+  const url =  `http://localhost:5000/Api/${username}/${password}`;
 
 
   const Validacion = async () => {
-    if (url.get ==='1') {
-     alert("ajsd"); 
-     setPassword("");
-     setUsername("");
+    axios.get(url).then((response) => {
+      // handle success
+      console.log('succes',response);
+      if (response.data ==='1') {
+        alert("Login successful!"); 
+        setPassword("");
+        setUsername(""); 
+        // TODO: limpiar cajas de texto :v
 
-    } else {
-      alert(url);
-      alert("Esta incorrecto algo");
-    }
+       } else {
+         alert("Credentials are wrong!"); 
+        }
+    })
+    .catch((error) => {
+      // handle error
+      alert("Error:", error); 
+      console.log('error',error);
+    });
+
+
   };
+
   
   const onChangep = e => setPassword(e.target.value);
   const onChangeu = e => setUsername(e.target.value);
