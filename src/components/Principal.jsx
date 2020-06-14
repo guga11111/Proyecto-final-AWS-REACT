@@ -11,6 +11,12 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
+
+
+
+  
 
 
 
@@ -29,6 +35,8 @@ import axios from "axios";
     </Typography>
   );
 }
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,6 +77,7 @@ export default function SignInSide() {
 
   const url =  `http://localhost:5000/Api/${username}/${password}`;
 
+  let history = useHistory();
 
   const Validacion = async () => {
     axios.get(url).then((response) => {
@@ -79,7 +88,7 @@ export default function SignInSide() {
         setPassword("");
         setUsername(""); 
         // TODO: limpiar cajas de texto :v
-
+        history.push("/buscarreceta")
        } else {
          alert("Credentials are wrong!"); 
         }
