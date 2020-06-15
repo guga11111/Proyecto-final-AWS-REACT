@@ -47,6 +47,7 @@ const Recipe = ({ recipe }) => {
         <Grid item xs={12}>
         <Card  className={classes.espacio}>
       <CardActionArea>
+
         <CardMedia
           className={classes.media}
           image={image}
