@@ -14,10 +14,18 @@ import { useHistory } from "react-router-dom";
 function Copyright() {
   return (
     <Typography variant="body1" color="textSecondary" align="center">
+      {'Si usted no tiene usuario, aquí puede '}
+      <Link color="inherit" href="newuser">
+        crear uno.
+      </Link>{' '}
+      <br/>
+
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         CookBook
       </Link>{' '}
+     
+
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -60,8 +68,8 @@ export default function SignInSide() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const url =  `https://37tpbz4ba8.execute-api.us-east-1.amazonaws.com/prop/api/${username}/${password}`; 
-
+  const url =  `https://nwfchqyrce.execute-api.us-east-1.amazonaws.com/prop/api/${username}/${password}`; 
+  
   let history = useHistory();
 
   const Validacion = async () => {
