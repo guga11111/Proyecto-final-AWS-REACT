@@ -15,21 +15,11 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
-    paper: {
-      padding: theme.spacing(2),
-      margin: 'auto',
-      maxWidth: 400,
-      color: theme.palette.text.secondary,
-      bottom: 0,
-      paddingBottom: 50,
-    },
     list: {
       marginBottom: theme.spacing(2),
     },
     appBar: {
-      position:'relative',
-      top:'auto',
-      bottom: 0,
+      position:'sticky',
     },
     image: {
       width: 128,
@@ -63,8 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
     return (
         <div className={classes.root}>
-
-    <AppBar style={{ background: '#ffa040' }} position="fixed"  className={classes.appBar}>
+<AppBar style={{ background: '#ffa040' }}  className={classes.appBar}>
   <Toolbar>
   <img  style={logo} src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.15752-9/92830141_446428632833448_8294136053976006656_n.png?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=tDgy9ZRSagMAX-hRBbX&_nc_ht=scontent.fcvj1-1.fna&oh=e7a9e3cc014de1a481aa7201b555eb75&oe=5EBFF458" alt=""/>
   <h1>Integrantes </h1>

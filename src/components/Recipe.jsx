@@ -7,15 +7,11 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-
-
 const Recipe = ({ recipe }) => {
   const { label, image, url, ingredients } = recipe.recipe;
-
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,30 +38,24 @@ const Recipe = ({ recipe }) => {
     <div>
 &nbsp;
     <div className={classes.root}>
-      
       <Grid container spacing={5}>
-        <Grid item xs={12}>
+        <Grid item xs={20}>
         <Card  className={classes.espacio}>
       <CardActionArea>
-
         <CardMedia
           className={classes.media}
           image={image}
           title={label}
         />
         <CardContent>
-          <Typography gutterBottom variant="h6" component="h3">
+          <Typography variant="h4" component="h3">
             {label}
           </Typography>
-       
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button  href={url} size="small" color="primary">
-        Url
-        </Button>
-      
-      <Popup trigger={<button>Ingredientes</button>} position="right center" size="small">
+      <CardActions>      
+      <a class="button" href={url}>Receta</a>
+      <Popup trigger={<button className="buttoning">Ingredientes</button>}  position="right center" size="small">
     <div>
     {<RecipeDetails ingredients={ingredients} />}
     </div>

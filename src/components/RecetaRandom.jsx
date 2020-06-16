@@ -5,9 +5,20 @@ import Recipe from "./Recipe";
 import Alert from "./Alert";
 import AppNavbar from './AppNavbar';
 import Footer from './Footer';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container'; 
+import Grid from '@material-ui/core/Grid'; 
+import { makeStyles } from '@material-ui/core/styles'; 
+import Typography from '@material-ui/core/Typography'; 
 
+const useStyles = makeStyles((theme) => ({ 
+  img: { 
+    margin: 'auto', 
+    display: 'block', 
+    maxWidth: '100%', 
+    maxHeight: '100%', 
+}})); 
+ 
 
 function App() {
   var n = Math.floor((Math.random() * 37) + 1)
@@ -40,7 +51,9 @@ function App() {
     }
   };
     const tamaño = {
-      width: 80,
+      backgroundColor: "#AC845B", 
+      color: "white", 
+      width: 80, 
       height: 48,
     }
 
@@ -50,31 +63,42 @@ function App() {
     e.preventDefault();
     getData();
   };
+  const classes = useStyles(); 
 
   return (
     <div>
       <AppNavbar />
-    <div className="App">
+    <div className="App" class="wrapper2">
     <center> <br></br>
-        <h1>
-          <span>Receta Aleatoria</span>
-        </h1>
+    <Grid> 
+      <Container maxWidth="xl" > 
+        <img className={classes.img} alt="complex" src="https://i.ibb.co/gMCX2Ny/aleatorio.png" /> 
+      </Container> 
+      </Grid>
+      <Typography class="a" component="h2" gutterBottom> 
+      ¿Qué cocino hoy? 
+      </Typography> 
+      <br></br> 
+      <Typography variant="h3" omponent="h2" gutterBottom> 
+      Si no sabes qué hacer de comer prueba con esta opción 
+      </Typography> 
     <form onSubmit={onSubmit} className="search-form">
       {alert !== "" && <Alert alert={alert} />} 
        <label>
        </label>
+       <br></br>
       <Button variant="contained" size="large" color="primary"  type="submit" value="Search" style={tamaño}>
           Generar
         </Button>
         </form>
-    <div className="recipes">
+        <br></br>
+    <div className="recipes2">
       {recipes !== [] &&
         recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe} />)}
     </div>
     </center>
+    <div class="push3"></div> 
   </div>
-  <br></br>
-  <br></br>
   <div>
       <Footer/> 
     </div>

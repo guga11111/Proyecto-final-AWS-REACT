@@ -3,17 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import AppNavbar from './AppNavbar';
 import Footer from './Footer';
-
+import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,24 +55,18 @@ export default function ComplexGrid() {
   return (
     <div>
       <AppNavbar />
-      <div className={classes.root}>
-        <React.Fragment>
-          <CssBaseline />
-          <Grid item>
-            <Container maxWidth="sm">
-              <img
-                className={classes.img}
-                alt="complex"
-                src="https://previews.123rf.com/images/vaskinamat/vaskinamat1702/vaskinamat170200022/72494424-sport-banner-portada-de-facebook-conjunto-de-bolas-de-deporte-y-art%C3%ADculos-de-juego-en-un-fondo-azul-fo.jpg"
-              />
-            </Container>
-          </Grid>
-        </React.Fragment>
-        <br />
-        <br />
-        <div>
-
-     <TableContainer component={Paper}>
+      <div className={classes.root} class="wrapper"> 
+      <React.Fragment>
+      <CssBaseline />
+      <br></br><br></br> 
+      <Grid> 
+      <Container maxWidth="xl" > 
+        <img className={classes.img} alt="complex" src="https://i.ibb.co/3pmvRrp/favoritas.png" /> 
+      </Container>
+      </Grid>
+    </React.Fragment>
+      <br/><br/>
+      <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -94,12 +86,12 @@ export default function ComplexGrid() {
         </TableBody>
       </Table>
     </TableContainer>
-
-        </div>
-      </div>
-      <div>
-        <Footer />
-      </div>
+      <div class="push"></div> 
+    </div>
+    <div>
+      <Footer/> 
+    </div>
     </div>
   );
 }
+

@@ -1,5 +1,4 @@
-import React , { useState }  from "react";
-import Avatar from '@material-ui/core/Avatar';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -7,25 +6,14 @@ import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-
-
-
-  
-
-
-
-  function Copyright() {
-
- 
-
+function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body1" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         CookBook
@@ -35,8 +23,6 @@ import { useHistory } from "react-router-dom";
     </Typography>
   );
 }
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: '#ffa040',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -73,7 +59,6 @@ export default function SignInSide() {
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
 
   const url =  `https://37tpbz4ba8.execute-api.us-east-1.amazonaws.com/prop/api/${username}/${password}`; 
 
@@ -98,20 +83,17 @@ export default function SignInSide() {
       alert("Error:", error); 
       console.log('error',error);
     });
-
-
+  };
+  const logo = {
+    height:67
   };
 
-  
   const onChangep = e => setPassword(e.target.value);
   const onChangeu = e => setUsername(e.target.value);
-
-
   const onSubmit = e => {
     e.preventDefault();
     Validacion();
   };
-   
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -119,17 +101,12 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography   component="h1" variant="h5">
-            Sign in
-          </Typography>
-          
+        <img  style={logo} src="https://i.ibb.co/nbP4Tj9/looogoo.png" alt=""/>
+       
           <form onSubmit={onSubmit}>
             <TextField
-            value={username} 
-            onChange={onChangeu}
+              value={username} 
+              onChange={onChangeu}
               variant="outlined"
               margin="normal"
               required
@@ -139,14 +116,12 @@ export default function SignInSide() {
               name="user"
               autoComplete="user"
               autoFocus
+              color="secondary"
             />
             <TextField
-              value={password} 
+              value={password}
               variant="outlined"
-
               onChange={onChangep}
-
-            //  onChange={onSubmit}
               margin="normal"
               required
               fullWidth
@@ -155,16 +130,16 @@ export default function SignInSide() {
               type="password"
               id="password"
               autoComplete="current-password"
+              color="secondary"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              style={{ background: '#ffa040' }}
               className={classes.submit}
-
             >
-              Sign In
+              Log In
             </Button>
             <Grid container>
               <Grid item xs>

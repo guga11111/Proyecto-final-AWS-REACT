@@ -11,6 +11,7 @@ import BuscarReceta from './components/BuscarReceta';
 import RecetaRandom from './components/RecetaRandom';
 import RecetaFav from './components/RecetaFav';
 import Videos from './components/Videos';
+import Health from './components/Health';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
      </Route>
      <Route path="/videos">
        <Videos/>
+     </Route>
+     <Route path="/health">
+       <Health/>
      </Route>
    
 

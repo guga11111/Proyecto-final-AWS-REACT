@@ -9,7 +9,7 @@ import StarIcon from '@material-ui/icons/Star';
 import IconButton from '@material-ui/core/IconButton';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import MovieIcon from '@material-ui/icons/Movie';
-
+import FavoriteIcon from '@material-ui/icons/Favorite'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,14 +40,17 @@ export default function AppNavbar() {
           </Typography>
           <ButtonGroup size="large" color="secondary" aria-label="large outlined primary button group">
           <IconButton href="recetafav" color="inherit" aria-label="star">
-        <StarIcon style={{ fontSize: 50 }}/>
+        <StarIcon style={{ fontSize: 30 }}/>
       </IconButton>
       <IconButton href="recetarandom" color="inherit" aria-label="repeat">
-        <RepeatIcon style={{ fontSize: 50 }}/>
+        <RepeatIcon style={{ fontSize: 30 }}/>
       </IconButton>
       <IconButton href="videos" color="inherit" aria-label="movie">
-        <MovieIcon style={{ fontSize: 50 }}/>
+        <MovieIcon style={{ fontSize: 30 }}/>
       </IconButton>
+      <IconButton href="health" color="inherit" aria-label="favorite"> 
+        <FavoriteIcon style={{ fontSize: 30 }}/> 
+      </IconButton> 
           </ButtonGroup>
         </Toolbar>
       </AppBar>

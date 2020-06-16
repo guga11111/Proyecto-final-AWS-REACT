@@ -3,7 +3,7 @@ html {
 }
 .alert h3 {
   font-size: 1.8rem;
-  color: #fff;
+  color: #614830;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -13,6 +13,13 @@ html {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.recipes2 {
+  width: 300px;
+  display: flex;
+  align-items: center;
   justify-content: center;
   align-items: flex-start;
 }
@@ -47,9 +54,71 @@ html {
 .ingredient-text {
   font-size: 1.5rem;
   color: #888;
+  color: #614830;
 }
 .ingredient-weight {
   color: #40b48e;
   font-size: 1.3rem;
+}
+ul.a {
+  list-style-type: circle;
+  color: #AC845B;
+}
+.wrapper {
+  min-height: 700px;
+  margin-bottom: 10px;
+}
+.wrapper2 {
+  min-height: 700px;
+  margin-bottom: 5px;
+}
+.wrapper3 {
+  min-height: 700px;
+  margin-bottom: 2px;
+}
+.push {
+  height: 100px;
+}
+.push2 {
+  height: 80px;
+}
+.push3 {
+  height: 100px;
+}
+.buttoning {
+  background: transparent;
+  border-color: rgb(243, 137, 67);
+  border-radius: 50px;
+  position: relative;
+  left: 150px;
+  padding: 10px 17px;
+  text-align: center;
+  font-size: 12px;
+}
+a.button {
+  background: transparent;
+  border-radius: 50px;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 14px;
+  color:  rgb(243, 137, 67);
+}
+.btn {
+  background-color: "F38943";
+}
+.btnrandom {
+  background: transparent;
+  border-color: rgb(243, 137, 67);
+  border-radius: 50px;
+  position: relative;
+  left: 160px;
+  padding: 10px 17px;
+  text-align: center;
+  font-size: 16px;
+} 
+.a {
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: xx-large;
+  color: "#AC845B";
 }
 
