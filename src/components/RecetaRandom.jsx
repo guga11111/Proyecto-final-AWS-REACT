@@ -50,12 +50,12 @@ function App() {
       setAlert("Se debe llenar el campo para buscar su receta");
     }
   };
-    const tamaño = {
-      backgroundColor: "#AC845B", 
-      color: "white", 
-      width: 80, 
-      height: 48,
-    }
+  const theme = { 
+    backgroundColor: "#AC845B", 
+    color: "white", 
+    width: 300, 
+    height: 48, 
+  }; 
 
   const onChange = e => setQuery(e.target.value);
 
@@ -87,7 +87,7 @@ function App() {
        <label>
        </label>
        <br></br>
-      <Button variant="contained" size="large" color="primary"  type="submit" value="Search" style={tamaño}>
+      <Button variant="contained" size="large" color="primary"  type="submit" value="Search" style={theme}>
           Generar
         </Button>
         </form>

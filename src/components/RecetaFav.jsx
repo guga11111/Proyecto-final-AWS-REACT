@@ -42,7 +42,7 @@ export default function ComplexGrid() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://5ee6cc4452bb0500161fcff4.mockapi.io/Api').then((response) => {
+    axios.get('https://927fp4oqr0.execute-api.us-east-1.amazonaws.com/prop/api').then((response) => {
     console.log('succes ',response.data);
     setData(response.data);
   }).catch((error) => {
@@ -76,9 +76,9 @@ export default function ComplexGrid() {
         </TableHead>
         <TableBody>
           {data.map((row) => (
-            <TableRow key={row.Userkey }>
+            <TableRow key={row.NombreReceta }>
               <TableCell component="th" scope="row">
-                {row.Userkey }
+                {row.NombreReceta }
               </TableCell>
               <TableCell align="right">{row.Url}</TableCell>
             </TableRow>
