@@ -70,7 +70,7 @@ export default function ComplexGrid() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>userkey</TableCell>
+            <TableCell>Receta</TableCell>
             <TableCell align="right">URL</TableCell>
           </TableRow>
         </TableHead>

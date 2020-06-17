@@ -7,10 +7,6 @@ import { useHistory } from "react-router-dom";
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
-
-
-
-
 export default function NewUser() {
   const logo = {
     height:85
@@ -23,7 +19,7 @@ export default function NewUser() {
     color: "white", 
     width: 300, 
     height: 48, 
-  }; 
+  };
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -50,15 +46,12 @@ export default function NewUser() {
 
   const classes = useStyles();
 
-
   const [name, setNameUsername] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-
     const url =  `https://nwfchqyrce.execute-api.us-east-1.amazonaws.com/prop/api/${username}/${password}/${name}`; 
     let history = useHistory();
-
 
     const Validacion = async () => {
       axios.post(url).then((response) => {
@@ -91,16 +84,16 @@ export default function NewUser() {
     };
 
   return (
-    <div>
+  <div>
   <AppBar style={{ background: '#ffa040' }} position="static">
   <center>
   <Button href="principal"  ><img  style={logo} src="https://i.ibb.co/6vvK7XG/loogoo.png" alt=""/></Button>
   </center>
   </AppBar>
-  <br/>
+   <br/>
   <Container maxWidth="xl" > 
         <img className={classes.img} alt="complex" src="https://i.ibb.co/Vtqx8Nz/banneruser.png" /> 
-      </Container>
+  </Container>
   <center>
     <br/>
     <br/>
@@ -109,17 +102,17 @@ export default function NewUser() {
     <br/>
     <form onSubmit={onSubmit}>
   <TextField id="filled-basic" style={textfield} onChange={onChangeu} value={username}  variant="filled" label="NuevoUsuario" />
-  <br/>
-  <br/>
+    <img src="" alt=""/>
+    <br/>
+    <br/>
   <TextField id="standard-basic" style={textfield} value={name} onChange={onChangen}  variant="filled" label="Nombre" />
-  <br/> 
-  <br/>
+    <br/> 
+    <br/>
   <TextField id="standard-basic" style={textfield} value={password} onChange={onChangep}  variant="filled" label="Contraseña"/>
-
-  <br/>
-<br/>
-<br/>
-<br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <br/>
     <br/>
   <Button variant="contained" size="large" type="submit" value="Search" style={theme}>Crear nuevo usuario</Button>
