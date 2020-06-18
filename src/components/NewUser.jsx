@@ -8,12 +8,12 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default function NewUser() {
+  const textfield = {
+    width:300
+  };
   const logo = {
     height:85
   };
-  const textfield = {
-    width:300
-  }
   const theme = { 
     backgroundColor: "#AC845B", 
     color: "white", 
@@ -41,6 +41,10 @@ export default function NewUser() {
       maxWidth: '100%',
       maxHeight: '100%',
     },
+    imagec: {
+      maxWidth: '100%',
+      height: 600
+    }
   }));
   
 
@@ -84,40 +88,63 @@ export default function NewUser() {
     };
 
   return (
-  <div>
-  <AppBar style={{ background: '#ffa040' }} position="static">
+    <div>
+    <AppBar style={{ background: '#ffa040' }} position="static">
   <center>
   <Button href="principal"  ><img  style={logo} src="https://i.ibb.co/6vvK7XG/loogoo.png" alt=""/></Button>
   </center>
   </AppBar>
-   <br/>
   <Container maxWidth="xl" > 
         <img className={classes.img} alt="complex" src="https://i.ibb.co/Vtqx8Nz/banneruser.png" /> 
   </Container>
-  <center>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <form onSubmit={onSubmit}>
-  <TextField id="filled-basic" style={textfield} onChange={onChangeu} value={username}  variant="filled" label="NuevoUsuario" />
-    <img src="" alt=""/>
-    <br/>
-    <br/>
-  <TextField id="standard-basic" style={textfield} value={name} onChange={onChangen}  variant="filled" label="Nombre" />
-    <br/> 
-    <br/>
-  <TextField id="standard-basic" style={textfield} value={password} onChange={onChangep}  variant="filled" label="Contraseña"/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-  <Button variant="contained" size="large" type="submit" value="Search" style={theme}>Crear nuevo usuario</Button>
-  </form>
+      <form onSubmit={onSubmit}>
+      <center>
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4">
+            <br></br>
+            <br></br>
+            <br></br>
+            <Container maxWidth="xl" maxHeight="xl">
+              <img className={classes.imagec} alt="complex" src="https://i.ibb.co/4M56dNp/chef2.png"/> 
+            </Container> 
+            </div>
 
-  </center>
-  </div>
+            <div class="col-lg-4">
+              <Container maxWidth="xl">
+              <br></br> 
+              <br></br> 
+              <br></br> 
+              <br></br> 
+              <br></br> 
+              <br></br> 
+              <TextField id="filled-basic" color="secondary" style={textfield} onChange={onChangeu} value={username}  variant="filled" label="NuevoUsuario"/>
+              <img src="" alt=""/>
+              <br></br>
+              <br></br>
+              <TextField id="standard-basic" color="secondary"style={textfield} value={name} onChange={onChangen}  variant="filled" label="Nombre" />
+              <br></br>
+              <br></br>
+              <TextField id="standard-basic" color="secondary" style={textfield} value={password} onChange={onChangep}  variant="filled" label="Contraseña"/>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <Button variant="contained" size="large" type="submit" value="Search" style={theme}>Crear nuevo usuario</Button>
+              </Container> 
+            </div>
+
+            <div class="col-lg-4">
+              <br></br>
+              <br></br>
+              <br></br>
+              <Container maxWidth="xl" maxHeight="xl">
+                <img className={classes.imagec} alt="complex" src="https://i.ibb.co/vXFxvpX/chef1.png"/>
+              </Container> 
+            </div>
+          </div>
+          </div>
+        </center>
+        </form>
+      </div>          
  )}

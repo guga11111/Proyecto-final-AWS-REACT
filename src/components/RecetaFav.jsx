@@ -1,5 +1,6 @@
+  
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -18,10 +19,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing(2),
+  table: {
+    maxWidth: 1500,
     margin: 'auto',
-    maxWidth: 500,
+  },
+  paper: {
+    padding: theme.spacing(5),
+    margin: 'auto',
+    minWidth: 500,
     color: theme.palette.text.secondary,
   },
   image: {
@@ -35,6 +40,18 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%',
   },
 }));
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: '#AC845B',
+    fontSize: 18,
+    color: 'white',
+    align: 'center'
+  },
+  body: {
+    fontSize: 18
+  }
+}))(TableCell);
 
 
 export default function ComplexGrid() {
@@ -55,7 +72,7 @@ export default function ComplexGrid() {
   return (
     <div>
       <AppNavbar />
-      <div className={classes.root} class="wrapper"> 
+      <div className={classes.root} class="wrapperfav"> 
       <React.Fragment>
       <CssBaseline />
       <br></br><br></br> 
@@ -67,24 +84,29 @@ export default function ComplexGrid() {
     </React.Fragment>
       <br/><br/>
       <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Receta</TableCell>
-            <TableCell align="right">URL</TableCell>
+      <Table className={classes.table}>
+        <TableHead className={classes.head}>
+          <TableRow className={classes.row}>
+            <StyledTableCell>Receta</StyledTableCell>
+            <StyledTableCell align="left">Si quieres ver la receta completa accede al respectivo link</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data.map((row) => (
             <TableRow key={row.NombreReceta }>
-              <TableCell component="th" scope="row">
-                {row.NombreReceta }
-              </TableCell>
-              <TableCell align="right">{row.Url}</TableCell>
+              <StyledTableCell fontSize="20"scope="row" width='700px'>{row.NombreReceta} </StyledTableCell>
+              <StyledTableCell align="left"> {row.Url}</StyledTableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </TableContainer>
       <div class="push"></div> 
     </div>
@@ -94,4 +116,3 @@ export default function ComplexGrid() {
     </div>
   );
 }
-

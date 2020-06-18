@@ -6,51 +6,44 @@ import Seleccion from './Seleccion';
 import AppNavbar from './AppNavbar';
 import Footer from './Footer';
 import Container from '@material-ui/core/Container'; 
-
-
 import "./styles.scss"
-
-
-
-const width = {
-  width: 1470
-}
+  
+const img = {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    }
 
 const App = () => (
-  
-       
+
       <Provider store={store}>
         <center>
         <AppNavbar/>
         <Container maxWidth="xl" >
           <br/>
-        <img style={width} alt="complex" src="https://i.ibb.co/ykYzmTS/bannerscore.png" />
+        <img style={img} alt="complex" src="https://i.ibb.co/ykYzmTS/bannerscore.png" />
       </Container>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        <br></br>
+        <br></br>
         <main>
-          <h1>¡Califícanos!</h1>
-          <Estrellas />
-          
+          <h1>¡Califica tu experiencia!</h1>
+          <br></br>
+          <Estrellas />     
           <Seleccion />
         </main>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
        
-        <div class="push"></div> 
+       
+        <div class="pushscore"></div> 
         <Footer/> 
         </center>
       </Provider>
-
-    
   );
   export default App;
-
-       
-    

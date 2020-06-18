@@ -17,15 +17,12 @@ const Jugadores = ({jugadores, agregarTitular, agregarSuplente}) => {
       const generatedGrid = () => {
         let items = container.getElementsByClassName('jugador')
         let itemsLength = items.length
-        let bp = window.matchMedia("(min-width: 640px)").matches ? window.matchMedia("(min-width: 1024px)").matches ? 4 : 2 : 1
 
         const getWidth = () => {
-          let n = bp + (itemsLength > bp ? 0.3 : 0)
-          return (itemsLength / n) * 100
         }
         return `
                 display: grid;
-                grid-template-columns: repeat(${itemsLength}, 225px);
+                grid-template-columns: repeat(${itemsLength}, 256px);
                 grid-gap: 1rem;
                 width : ${getWidth()}%;
               `

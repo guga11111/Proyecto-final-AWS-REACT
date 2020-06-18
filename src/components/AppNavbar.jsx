@@ -37,11 +37,11 @@ export default function AppNavbar() {
       
         <Toolbar>
         <Button href="buscarreceta"  ><img  style={logo} src="https://i.ibb.co/6vvK7XG/loogoo.png" alt=""/></Button>
-          <Typography variant="h6" className={classes.title}>
-          </Typography>
-          <ButtonGroup size="large" color="secondary" aria-label="large outlined primary button group">
-          <IconButton href="recetafav" color="inherit" aria-label="star">
-        <ThumbsUpDownIcon style={{ fontSize: 30 }}/>
+        <Typography variant="h6" className={classes.title}>
+        </Typography>
+        <ButtonGroup size="large" color="secondary" aria-label="large outlined primary button group">
+      <IconButton href="recetafav" color="inherit" aria-label="star">
+        <StarIcon style={{ fontSize: 30 }}/>
       </IconButton>
       <IconButton href="recetarandom" color="inherit" aria-label="repeat">
         <RepeatIcon style={{ fontSize: 30 }}/>
@@ -52,8 +52,8 @@ export default function AppNavbar() {
       <IconButton href="health" color="inherit" aria-label="favorite"> 
         <FavoriteIcon style={{ fontSize: 30 }}/> 
       </IconButton> 
-      <IconButton href="calificacion" color="inherit" aria-label="star">
-        <StarIcon style={{ fontSize: 30 }}/>
+      <IconButton href="calificacion" color="inherit" aria-label="thumbsupdown">
+        <ThumbsUpDownIcon style={{ fontSize: 30 }}/>
       </IconButton>
           </ButtonGroup>
         </Toolbar>
